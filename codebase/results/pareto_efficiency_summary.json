@@ -1,0 +1,101 @@
+{
+  "pareto_models": {
+    "BNCI2014-001": [
+      "cnn_kan",
+      "cnn_linear",
+      "cnn_mlp",
+      "eegnet"
+    ]
+  },
+  "macs_pareto_models": {
+    "BNCI2014-001": [
+      "cnn_kan",
+      "cnn_linear",
+      "cnn_mlp",
+      "eegnet"
+    ]
+  },
+  "dominance": {
+    "BNCI2014-001": "cnn_kan on the Pareto frontier; frontier = cnn_kan, cnn_linear, cnn_mlp, eegnet"
+  },
+  "profiles": {
+    "BNCI2014-001": {
+      "cnn_kan": {
+        "params": 2784.0,
+        "macs_mmac": 11.860072,
+        "mean_acc": 42.368827233333334,
+        "std_acc": 15.741279918508663,
+        "n": 9,
+        "color": "#1f77b4",
+        "marker": "o",
+        "is_kan": true
+      },
+      "cnn_kan_G5": {
+        "params": 3104.0,
+        "macs_mmac": 11.860968,
+        "mean_acc": 40.74459863333333,
+        "std_acc": 13.470153716734906,
+        "n": 9,
+        "color": "#3897d3",
+        "marker": "o",
+        "is_kan": true
+      },
+      "cnn_kan_G8": {
+        "params": 3584.0,
+        "macs_mmac": 11.862312,
+        "mean_acc": 30.285493811111113,
+        "std_acc": 5.663336482025989,
+        "n": 9,
+        "color": "#5bb4e5",
+        "marker": "o",
+        "is_kan": true
+      },
+      "cnn_linear": {
+        "params": 1556.0,
+        "macs_mmac": 11.856388,
+        "mean_acc": 40.94907375555555,
+        "std_acc": 12.482566154853007,
+        "n": 9,
+        "color": "#ff7f0e",
+        "marker": "v",
+        "is_kan": false
+      },
+      "cnn_mlp": {
+        "params": 2780.0,
+        "macs_mmac": 11.857668,
+        "mean_acc": 42.19907434444445,
+        "std_acc": 14.452309230718424,
+        "n": 9,
+        "color": "#2ca02c",
+        "marker": "D",
+        "is_kan": false
+      },
+      "csp_lda": {
+        "params": null,
+        "macs_mmac": null,
+        "mean_acc": 38.927468999999995,
+        "std_acc": 12.509574692717667,
+        "n": 9,
+        "color": "#7f7f7f",
+        "marker": "X",
+        "is_kan": false
+      },
+      "eegnet": {
+        "params": 3444.0,
+        "macs_mmac": 11.869972,
+        "mean_acc": 44.54861115555555,
+        "std_acc": 16.749621841870916,
+        "n": 9,
+        "color": "#d62728",
+        "marker": "P",
+        "is_kan": false
+      }
+    }
+  },
+  "figures": [
+    "results/figures/pareto_accuracy_vs_parameters.png",
+    "results/figures/pareto_accuracy_vs_parameters.pdf",
+    "results/figures/pareto_accuracy_vs_macs.png",
+    "results/figures/pareto_accuracy_vs_macs.pdf"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "cnn_kan": {
+    "mean_acc": 0.2688888907432556,
+    "std_subjects": 0.047223083674907684,
+    "n_subjects": 20,
+    "std_seeds": null,
+    "n_seeds": 1
+  },
+  "eegnet": {
+    "mean_acc": 0.2622222304344177,
+    "std_subjects": 0.03465227037668228,
+    "n_subjects": 20,
+    "std_seeds": null,
+    "n_seeds": 1
+  }
+}

@@ -1,0 +1,41 @@
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.build/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Execution Logs
+*.log
+
+# MNE Data & Dataset Caches
+mne_data/
+data_cache/
+*.npy
+*.npz
+codebase/results/phase3/
+codebase/results/physionet/
+codebase/results/smoke/
+*.zip

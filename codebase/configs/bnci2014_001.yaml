@@ -1,0 +1,37 @@
+# BNCI2014_001 (BCI Competition IV-2a): 22 ch, 9 subjects, 2 sessions, 250 Hz.
+# Read by run_experiments.py / run_benchmark.py via src/utils/experiment.py.
+dataset:
+  name: "bnci2014_001"
+  subjects: null            # null = all 9; e.g. [1, 2] for a smoke run
+  events: ["left_hand", "right_hand", "feet", "tongue"]
+  bandpass:
+    low: 8.0
+    high: 30.0
+  # Window relative to the dataset's own trial interval (BNCI: 2-6 s cue-locked).
+  # tmax null = full interval -> T = 1001 samples at 250 Hz, which is what every committed
+  # result used. The paper says T = 750 (3 s); settle that in Phase 7 and set tmax: 3.0 here.
+  tmin: 0.0
+  tmax: null
+  resample: null
+
+experiment:
+  seeds: [0, 1, 2, 3, 4]
+  batch_size: 64
+  max_epochs: 40
+  patience: 10
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  val_split: 0.2            # stratified, taken from TRAINING subjects' trials only
+  device: "auto"            # auto -> cuda / mps / cpu
+  overwrite: true           # always refit; never serve MOABB cached scores
+  save_model: true
+  # Main model + ablations + baselines. cnn_kan uses kan.grid_size; the sweep adds the
+  # other grid sizes once each (no duplicate fit of the main config).
+  models: ["cnn_kan", "cnn_linear", "cnn_mlp", "eegnet", "csp_lda"]
+  grid_sweep: [3, 5, 8]
+
+kan:
+  grid_size: 3
+  spline_order: 3
+  d_bottleneck: 16
+  grid_updates: 5           # refit knot grids to the bottleneck range after epochs 1-5 (0 = off)

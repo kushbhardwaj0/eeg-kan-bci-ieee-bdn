@@ -1,0 +1,18 @@
+# Exact versions the test suite and the smoke runs were verified with (Python 3.12.7, macOS arm64).
+# A MOABB API change already broke the runners once; keep these pinned and bump them deliberately.
+torch==2.14.1
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+pandas==3.0.6
+h5py==3.16.0
+matplotlib==3.11.2
+seaborn==0.13.2
+pyyaml==6.0.3
+mne==1.13.2
+moabb==1.7.2
+skorch==1.4.0
+torchinfo==1.8.0
+ptflops==0.7.5
+pytest==9.1.1
+wandb==0.30.0

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Leave-one-subject-out cross-subject accuracy, parameter count and Holm-corrected Wilcoxon test against the main model.}
+\label{tab:loso_benchmark_results}
+\begin{tabular}{llrrrr}
+\toprule
+\textbf{Model} & \textbf{Head} & \textbf{$G$} & \textbf{Params} & \textbf{Acc.\ (\%)} & \textbf{$p$} \\
+\midrule
+cnn\_kan & B-spline KAN (G=3) & 3 & 2,784 & 42.37 $\pm$ 15.74 & -- \\
+cnn\_kan\_G5 & B-spline KAN (G=5) & 5 & 3,104 & 40.74 $\pm$ 13.47 & 1.000 \\
+cnn\_kan\_G8 & B-spline KAN (G=8) & 8 & 3,584 & 30.29 $\pm$ 5.66 & 0.023 \\
+cnn\_linear & Dense linear & N/A & 1,556 & 40.95 $\pm$ 12.48 & 1.000 \\
+cnn\_mlp & MLP (param-matched) & N/A & 2,780 & 42.20 $\pm$ 14.45 & 1.000 \\
+csp\_lda & LDA & N/A & -- & 38.93 $\pm$ 12.51 & 1.000 \\
+eegnet & Dense classifier & N/A & 3,444 & 44.55 $\pm$ 16.75 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

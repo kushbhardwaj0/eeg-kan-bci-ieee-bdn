@@ -1,0 +1,10 @@
+# Conda wrapper around requirements.txt, so the pins live in one place.
+# Create from the codebase/ directory: conda env create -f environment.yml
+name: eeg-kan-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt

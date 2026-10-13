@@ -1,0 +1,33 @@
+# PhysionetMI (EEGBCI): 64 ch, 109 subjects, 1 session, 160 Hz.
+# Read by run_physionet_scaling.py via src/utils/experiment.py.
+dataset:
+  name: "physionet"
+  subjects: null            # null = first `subset_subjects`; or an explicit list
+  subset_subjects: 20
+  # Explicit 4-class list. Omitting it lets MOABB add `rest` as a 5th class (audit item 7).
+  events: ["left_hand", "right_hand", "feet", "hands"]
+  bandpass:
+    low: 8.0
+    high: 30.0
+  tmin: 0.0
+  tmax: null                # full interval -> T = 481 at 160 Hz (not 480)
+  resample: null
+
+experiment:
+  seeds: [0, 1, 2, 3, 4]
+  batch_size: 64
+  max_epochs: 30
+  patience: 8
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  val_split: 0.2
+  device: "auto"
+  overwrite: true
+  save_model: true
+  models: ["cnn_kan", "eegnet"]
+
+kan:
+  grid_size: 3
+  spline_order: 3
+  d_bottleneck: 16
+  grid_updates: 5           # refit knot grids to the bottleneck range after epochs 1-5 (0 = off)
