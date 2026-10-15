@@ -8,7 +8,7 @@
 
 ## Overview
 
-This repository contains the empirical benchmark, model implementations, and evaluation framework presented at the IEEE Brain Discovery and Neurotechnology (BDN) Workshop. 
+This repository contains the empirical benchmark, model implementations, and evaluation framework. 
 
 The project investigates Kolmogorov-Arnold Networks (KANs) for non-invasive electroencephalography (EEG) motor imagery decoding under zero-calibration leave-one-subject-out (LOSO) cross-subject transfer. While standard deep architectures rely on opaque Multi-Layer Perceptron (MLP) classification heads that obscure neurophysiological decision dynamics, KANs parameterize network edges with learnable univariate B-splines. 
 
@@ -156,21 +156,6 @@ python run_physionet_scaling.py --config configs/physionet.yaml --run-dir result
 ### 5. Export Statistics, LaTeX Tables, and Pareto Figures
 ```bash
 python export_results.py --run-dir results/bnci_full
-```
-
----
-
-## Citation
-
-If referencing this work or using the codebase, please cite:
-
-```bibtex
-@inproceedings{bhardwaj2026interpretable,
-  title={Interpretable Neural Decoding: Benchmarking Kolmogorov-Arnold Networks for Cross-Subject Motor Imagery Generalization},
-  author={Bhardwaj, Kush and Kashyap, Abhay and Himagirish, Esha and Park, Owen and Ganta, Aniketh},
-  booktitle={IEEE Brain Discovery and Neurotechnology (BDN) Workshop},
-  year={2026}
-}
 ```
 
 ---
